@@ -4,7 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { DatePicker } from "@/components/ui/date-picker";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { format } from "date-fns";
 import { toast } from "sonner";
 
 const WastageLog = ({ onSave }) => {
@@ -82,11 +84,21 @@ const WastageLog = ({ onSave }) => {
           </div>
           <div className="mb-4">
             <Label htmlFor="date">Date</Label>
-            <DatePicker
-              selected={form.date}
-              onSelect={handleDateChange}
-              required
-            />
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline" className="w-full justify-start text-left font-normal">
+                  {form.date ? format(form.date, "PPP") : <span>Pick a date</span>}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={form.date}
+                  onSelect={handleDateChange}
+                  initialFocus
+                />
+              </PopoverContent>
+            </Popover>
           </div>
           <div className="mb-4">
             <Label htmlFor="cost">Cost</Label>
