@@ -78,16 +78,20 @@ const Index = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl mb-4">Staff Scheduling</h1>
-      <Calendar selected={selectedDate} onSelect={handleDateClick} />
-      <div className="mt-4">
-        <h2 className="text-2xl mb-2">Upcoming Shifts</h2>
-        <ul>
-          {shifts.map((shift, index) => (
-            <li key={index} className="mb-2">
-              {shift.date} - {shift.time} - {shift.staffMember} - {shift.role}
-            </li>
-          ))}
-        </ul>
+      <div className="flex flex-col lg:flex-row lg:space-x-4">
+        <div className="flex-1">
+          <Calendar selected={selectedDate} onSelect={handleDateClick} />
+        </div>
+        <div className="flex-1 mt-4 lg:mt-0">
+          <h2 className="text-2xl mb-2">Upcoming Shifts</h2>
+          <ul>
+            {shifts.map((shift, index) => (
+              <li key={index} className="mb-2">
+                {shift.date} - {shift.time} - {shift.staffMember} - {shift.role}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <Dialog>
         <DialogTrigger asChild>
@@ -160,13 +164,23 @@ const Index = () => {
           </form>
         </DialogContent>
       </Dialog>
-      <TimeClock onClockIn={handleClockIn} onClockOut={handleClockOut} />
-      <AttendanceReport attendanceData={attendanceData} />
-      <ChecklistTemplateManager templates={templates} onSaveTemplate={handleSaveTemplate} />
-      {selectedTemplate && (
-        <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
-      )}
-      <InventoryManagement />
+      <div className="flex flex-col lg:flex-row lg:space-x-4 mt-4">
+        <div className="flex-1">
+          <TimeClock onClockIn={handleClockIn} onClockOut={handleClockOut} />
+        </div>
+        <div className="flex-1 mt-4 lg:mt-0">
+          <AttendanceReport attendanceData={attendanceData} />
+        </div>
+      </div>
+      <div className="mt-4">
+        <ChecklistTemplateManager templates={templates} onSaveTemplate={handleSaveTemplate} />
+        {selectedTemplate && (
+          <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
+        )}
+      </div>
+      <div className="mt-4">
+        <InventoryManagement />
+      </div>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const Layout = () => {
 };
 
 const DesktopNav = () => (
-  <nav className="hidden md:flex md:items-center md:gap-5 lg:gap-6 text-lg font-medium md:text-sm">
+  <nav className="hidden lg:flex lg:items-center lg:gap-5 xl:gap-6 text-lg font-medium lg:text-sm">
     <NavItem
       to="/"
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
@@ -51,7 +51,7 @@ const DesktopNav = () => (
 const MobileNav = () => (
   <Sheet>
     <SheetTrigger asChild>
-      <Button variant="outline" size="icon" className="shrink-0 md:hidden">
+      <Button variant="outline" size="icon" className="shrink-0 lg:hidden">
         <Menu className="h-5 w-5" />
         <span className="sr-only">Toggle navigation menu</span>
       </Button>

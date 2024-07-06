@@ -32,7 +32,7 @@ const Layout = () => {
 };
 
 const Sidebar = () => (
-  <div className="hidden border-r bg-muted/40 md:block">
+  <div className="hidden border-r bg-muted/40 lg:block">
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
         <NavLink to="/" className="flex items-center gap-2 font-semibold">
@@ -94,7 +94,7 @@ const Sidebar = () => (
 const MobileSidebar = () => (
   <Sheet>
     <SheetTrigger asChild>
-      <Button variant="outline" size="icon" className="shrink-0 md:hidden">
+      <Button variant="outline" size="icon" className="shrink-0 lg:hidden">
         <Menu className="h-5 w-5" />
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
@@ -143,7 +143,7 @@ const MobileSidebar = () => (
 const UserDropdown = () => (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <Button variant="secondary" size="icon" className="rounded-full">
+      <Button variant="secondary" size="icon" className="rounded-full lg:block">
         <CircleUser className="h-5 w-5" />
         <span className="sr-only">Toggle user menu</span>
       </Button>
