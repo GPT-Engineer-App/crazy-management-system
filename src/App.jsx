@@ -11,6 +11,7 @@ import WastageReport from "./components/WastageReport";
 import AdminPanel from "./pages/AdminPanel";
 import EmployeeInterface from "./pages/EmployeeInterface";
 import SuperAdminPanel from "./pages/SuperAdminPanel"; // Import the new SuperAdminPanel component
+import CommissionManagement from "./pages/CommissionManagement"; // Import the CommissionManagement component
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => {
               <Route path="admin-panel" element={<AdminPanel />} />
               <Route path="employee-interface" element={<EmployeeInterface />} />
               <Route path="super-admin-panel" element={<SuperAdminPanel />} /> {/* Add the new route */}
+              <Route path="commission-management" element={<CommissionManagement />} /> {/* Add the new route */}
             </Route>
           </Routes>
         </Router>

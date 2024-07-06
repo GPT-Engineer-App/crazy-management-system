@@ -74,6 +74,11 @@ const Sidebar = () => (
               to: "/super-admin-panel",
               icon: <Home className="h-4 w-4" />,
             },
+            {
+              title: "Commission Management",
+              to: "/commission-management",
+              icon: <Home className="h-4 w-4" />,
+            },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}
@@ -110,7 +115,7 @@ const MobileSidebar = () => (
             to: "/",
             icon: <Calendar className="h-4 w-4" />,
           },
-        {
+          {
             title: "Admin Panel",
             to: "/admin-panel",
             icon: <Home className="h-4 w-4" />,
