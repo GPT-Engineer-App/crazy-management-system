@@ -74,6 +74,11 @@ const Sidebar = () => (
               to: "/super-admin-panel",
               icon: <Home className="h-4 w-4" />,
             },
+            {
+              title: "Cash Flow Management",
+              to: "/cash-flow-management",
+              icon: <Home className="h-4 w-4" />,
+            },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}
@@ -123,6 +128,11 @@ const MobileSidebar = () => (
           {
             title: "Super Admin Panel",
             to: "/super-admin-panel",
+            icon: <Home className="h-4 w-4" />,
+          },
+          {
+            title: "Cash Flow Management",
+            to: "/cash-flow-management",
             icon: <Home className="h-4 w-4" />,
           },
         ].map((item) => (
