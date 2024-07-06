@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import TimeClock from "@/components/TimeClock";
 import AttendanceReport from "@/components/AttendanceReport";
+import Checklist from "@/components/Checklist";
+import ChecklistTemplateManager from "@/components/ChecklistTemplateManager";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -20,6 +22,8 @@ const Index = () => {
     description: "",
   });
   const [attendanceData, setAttendanceData] = useState([]);
+  const [templates, setTemplates] = useState([]);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
@@ -56,6 +60,18 @@ const Index = () => {
       entry.clockOut === null ? { ...entry, clockOut: time } : entry
     );
     setAttendanceData(updatedData);
+  };
+
+  const handleSaveTemplate = (template) => {
+    const updatedTemplates = templates.filter((t) => t.name !== template.name);
+    setTemplates([...updatedTemplates, template]);
+  };
+
+  const handleSaveChecklist = (tasks) => {
+    const updatedTemplates = templates.map((template) =>
+      template.name === selectedTemplate.name ? { ...template, tasks } : template
+    );
+    setTemplates(updatedTemplates);
   };
 
   return (
@@ -145,6 +161,10 @@ const Index = () => {
       </Dialog>
       <TimeClock onClockIn={handleClockIn} onClockOut={handleClockOut} />
       <AttendanceReport attendanceData={attendanceData} />
+      <ChecklistTemplateManager templates={templates} onSaveTemplate={handleSaveTemplate} />
+      {selectedTemplate && (
+        <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
+      )}
     </div>
   );
 };
