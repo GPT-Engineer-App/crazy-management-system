@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Adobo",
+    "description": "A popular Filipino dish made with chicken or pork, marinated in vinegar, soy sauce, garlic, and spices.",
+    "price": 150,
+    "image": "/images/adobo.jpg"
+  },
+  {
+    "name": "Sinigang",
+    "description": "A sour soup made with pork, shrimp, or fish, and flavored with tamarind.",
+    "price": 180,
+    "image": "/images/sinigang.jpg"
+  },
+  {
+    "name": "Lechon",
+    "description": "A whole roasted pig, known for its crispy skin and tender meat.",
+    "price": 2500,
+    "image": "/images/lechon.jpg"
+  },
+  {
+    "name": "Halo-Halo",
+    "description": "A popular Filipino dessert made with crushed ice, evaporated milk, and various ingredients such as sweetened beans, fruits, and jellies.",
+    "price": 90,
+    "image": "/images/halo-halo.jpg"
+  },
+  {
+    "name": "San Miguel Beer",
+    "description": "A popular Filipino beer known for its smooth and refreshing taste.",
+    "price": 60,
+    "image": "/images/san-miguel-beer.jpg"
+  }
+]

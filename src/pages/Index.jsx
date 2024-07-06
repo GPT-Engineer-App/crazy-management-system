@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -11,6 +11,7 @@ import AttendanceReport from "@/components/AttendanceReport";
 import Checklist from "@/components/Checklist";
 import ChecklistTemplateManager from "@/components/ChecklistTemplateManager";
 import InventoryManagement from "@/components/InventoryManagement";
+import menuItems from "@/data/menuItems.json";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -180,6 +181,19 @@ const Index = () => {
       </div>
       <div className="mt-4">
         <InventoryManagement />
+      </div>
+      <div className="mt-4">
+        <h2 className="text-2xl mb-2">Menu Items</h2>
+        <ul>
+          {menuItems.map((item, index) => (
+            <li key={index} className="mb-4">
+              <img src={item.image} alt={item.name} className="w-32 h-32 object-cover mb-2" />
+              <h3 className="text-xl font-semibold">{item.name}</h3>
+              <p>{item.description}</p>
+              <p className="font-bold">₱{item.price}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
