@@ -59,6 +59,16 @@ const Sidebar = () => (
               to: "/wastage-report",
               icon: <Home className="h-4 w-4" />,
             },
+            {
+              title: "Admin Panel",
+              to: "/admin-panel",
+              icon: <Home className="h-4 w-4" />,
+            },
+            {
+              title: "Employee Interface",
+              to: "/employee-interface",
+              icon: <Home className="h-4 w-4" />,
+            },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}
@@ -94,6 +104,16 @@ const MobileSidebar = () => (
             title: "Staff Scheduling",
             to: "/",
             icon: <Calendar className="h-4 w-4" />,
+          },
+        {
+            title: "Admin Panel",
+            to: "/admin-panel",
+            icon: <Home className="h-4 w-4" />,
+          },
+          {
+            title: "Employee Interface",
+            to: "/employee-interface",
+            icon: <Home className="h-4 w-4" />,
           },
         ].map((item) => (
           <SidebarNavLink key={item.to} to={item.to}>

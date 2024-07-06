@@ -8,6 +8,8 @@ import SidebarLayout from "./layouts/sidebar";
 import Index from "./pages/Index.jsx";
 import WastageLog from "./components/WastageLog";
 import WastageReport from "./components/WastageReport";
+import AdminPanel from "./pages/AdminPanel";
+import EmployeeInterface from "./pages/EmployeeInterface";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => {
               <Route index element={<Index />} />
               <Route path="wastage-log" element={<WastageLog />} />
               <Route path="wastage-report" element={<WastageReport />} />
+              <Route path="admin-panel" element={<AdminPanel />} />
+              <Route path="employee-interface" element={<EmployeeInterface />} />
             </Route>
           </Routes>
         </Router>
