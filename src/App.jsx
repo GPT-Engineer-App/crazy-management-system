@@ -10,6 +10,7 @@ import WastageLog from "./components/WastageLog";
 import WastageReport from "./components/WastageReport";
 import AdminPanel from "./pages/AdminPanel";
 import EmployeeInterface from "./pages/EmployeeInterface";
+import SuperAdminPanel from "./pages/SuperAdminPanel"; // Import the new SuperAdminPanel component
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,11 @@ export const navItems = [
     to: "/wastage-report",
     icon: <Home className="h-4 w-4" />,
   },
+  {
+    title: "Super Admin Panel",
+    to: "/super-admin-panel",
+    icon: <Home className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -44,6 +50,7 @@ const App = () => {
               <Route path="wastage-report" element={<WastageReport />} />
               <Route path="admin-panel" element={<AdminPanel />} />
               <Route path="employee-interface" element={<EmployeeInterface />} />
+              <Route path="super-admin-panel" element={<SuperAdminPanel />} /> {/* Add the new route */}
             </Route>
           </Routes>
         </Router>

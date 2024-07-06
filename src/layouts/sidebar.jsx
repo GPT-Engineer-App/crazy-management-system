@@ -69,6 +69,11 @@ const Sidebar = () => (
               to: "/employee-interface",
               icon: <Home className="h-4 w-4" />,
             },
+            {
+              title: "Super Admin Panel",
+              to: "/super-admin-panel",
+              icon: <Home className="h-4 w-4" />,
+            },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}
@@ -113,6 +118,11 @@ const MobileSidebar = () => (
           {
             title: "Employee Interface",
             to: "/employee-interface",
+            icon: <Home className="h-4 w-4" />,
+          },
+          {
+            title: "Super Admin Panel",
+            to: "/super-admin-panel",
             icon: <Home className="h-4 w-4" />,
           },
         ].map((item) => (
