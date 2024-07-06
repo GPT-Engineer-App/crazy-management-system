@@ -11,10 +11,15 @@ const InventoryManagement = () => {
   const [inventory, setInventory] = useState([]);
   const [form, setForm] = useState({ name: "", quantity: "", expirationDate: "", reorderPoint: "" });
   const [alerts, setAlerts] = useState([]);
+  const [breakageReports, setBreakageReports] = useState([]);
 
   useEffect(() => {
     checkAlerts();
   }, [inventory]);
+
+  useEffect(() => {
+    adjustInventoryForBreakages();
+  }, [breakageReports]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,6 +44,17 @@ const InventoryManagement = () => {
       return isLowStock || isExpiringSoon;
     });
     setAlerts(newAlerts);
+  };
+
+  const adjustInventoryForBreakages = () => {
+    const updatedInventory = inventory.map(item => {
+      const breakage = breakageReports.find(report => report.itemName === item.name);
+      if (breakage) {
+        return { ...item, quantity: item.quantity - breakage.quantity };
+      }
+      return item;
+    });
+    setInventory(updatedInventory);
   };
 
   return (

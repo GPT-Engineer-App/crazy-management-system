@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, Home } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -42,6 +42,10 @@ const DesktopNav = () => (
         {item.title}
       </NavItem>
     ))}
+    <NavItem to="/breakage-tracking" className="flex items-center gap-2">
+      <Home className="h-4 w-4" />
+      Breakage Tracking
+    </NavItem>
   </nav>
 );
 
@@ -67,6 +71,10 @@ const MobileNav = () => (
             {item.title}
           </NavItem>
         ))}
+        <NavItem to="/breakage-tracking" className="flex items-center gap-2">
+          <Home className="h-4 w-4" />
+          Breakage Tracking
+        </NavItem>
       </nav>
     </SheetContent>
   </Sheet>

@@ -8,6 +8,7 @@ import SidebarLayout from "./layouts/sidebar";
 import Index from "./pages/Index.jsx";
 import WastageLog from "./components/WastageLog";
 import WastageReport from "./components/WastageReport";
+import BreakageTracking from "./components/BreakageTracking";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,11 @@ export const navItems = [
     to: "/wastage-report",
     icon: <Home className="h-4 w-4" />,
   },
+  {
+    title: "Breakage Tracking",
+    to: "/breakage-tracking",
+    icon: <Home className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -40,6 +46,7 @@ const App = () => {
               <Route index element={<Index />} />
               <Route path="wastage-log" element={<WastageLog />} />
               <Route path="wastage-report" element={<WastageReport />} />
+              <Route path="breakage-tracking" element={<BreakageTracking />} />
             </Route>
           </Routes>
         </Router>

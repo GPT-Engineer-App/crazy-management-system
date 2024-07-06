@@ -59,6 +59,11 @@ const Sidebar = () => (
               to: "/wastage-report",
               icon: <Home className="h-4 w-4" />,
             },
+            {
+              title: "Breakage Tracking",
+              to: "/breakage-tracking",
+              icon: <Home className="h-4 w-4" />,
+            },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}
