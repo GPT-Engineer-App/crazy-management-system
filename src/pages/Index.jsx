@@ -11,6 +11,7 @@ import AttendanceReport from "@/components/AttendanceReport";
 import Checklist from "@/components/Checklist";
 import ChecklistTemplateManager from "@/components/ChecklistTemplateManager";
 import InventoryManagement from "@/components/InventoryManagement";
+import ComplimentaryItems from "@/components/ComplimentaryItems";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -73,6 +74,11 @@ const Index = () => {
       template.name === selectedTemplate.name ? { ...template, tasks } : template
     );
     setTemplates(updatedTemplates);
+  };
+
+  const handleSaveComplimentaryItem = (item) => {
+    // Logic to save complimentary item
+    console.log("Complimentary Item Saved:", item);
   };
 
   return (
@@ -167,6 +173,7 @@ const Index = () => {
         <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
       )}
       <InventoryManagement />
+      <ComplimentaryItems inventory={inventory} onSave={handleSaveComplimentaryItem} />
     </div>
   );
 };
