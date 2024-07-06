@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { Calendar, CircleUser, Menu, Package2 } from "lucide-react";
+import { Calendar, CircleUser, Menu, Package2, Home } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -48,6 +48,16 @@ const Sidebar = () => (
               title: "Staff Scheduling",
               to: "/",
               icon: <Calendar className="h-4 w-4" />,
+            },
+            {
+              title: "Wastage Log",
+              to: "/wastage-log",
+              icon: <Home className="h-4 w-4" />,
+            },
+            {
+              title: "Wastage Report",
+              to: "/wastage-report",
+              icon: <Home className="h-4 w-4" />,
             },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
