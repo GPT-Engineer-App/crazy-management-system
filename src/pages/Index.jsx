@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import TimeClock from "@/components/TimeClock";
+import AttendanceReport from "@/components/AttendanceReport";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -17,6 +19,7 @@ const Index = () => {
     role: "",
     description: "",
   });
+  const [attendanceData, setAttendanceData] = useState([]);
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
@@ -42,6 +45,17 @@ const Index = () => {
       role: "",
       description: "",
     });
+  };
+
+  const handleClockIn = (time) => {
+    setAttendanceData([...attendanceData, { clockIn: time, clockOut: null }]);
+  };
+
+  const handleClockOut = (time) => {
+    const updatedData = attendanceData.map((entry) =>
+      entry.clockOut === null ? { ...entry, clockOut: time } : entry
+    );
+    setAttendanceData(updatedData);
   };
 
   return (
@@ -129,6 +143,8 @@ const Index = () => {
           </form>
         </DialogContent>
       </Dialog>
+      <TimeClock onClockIn={handleClockIn} onClockOut={handleClockOut} />
+      <AttendanceReport attendanceData={attendanceData} />
     </div>
   );
 };
