@@ -11,6 +11,7 @@ import AttendanceReport from "@/components/AttendanceReport";
 import Checklist from "@/components/Checklist";
 import ChecklistTemplateManager from "@/components/ChecklistTemplateManager";
 import InventoryManagement from "@/components/InventoryManagement";
+import OnTheSpotDiscount from "@/components/OnTheSpotDiscount"; // Import the new component
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -167,6 +168,7 @@ const Index = () => {
         <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
       )}
       <InventoryManagement />
+      <OnTheSpotDiscount /> {/* Add the new component */}
     </div>
   );
 };
