@@ -11,6 +11,7 @@ import AttendanceReport from "@/components/AttendanceReport";
 import Checklist from "@/components/Checklist";
 import ChecklistTemplateManager from "@/components/ChecklistTemplateManager";
 import InventoryManagement from "@/components/InventoryManagement";
+import EntertainmentFeeAccounting from "@/components/EntertainmentFeeAccounting";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -25,6 +26,7 @@ const Index = () => {
   const [attendanceData, setAttendanceData] = useState([]);
   const [templates, setTemplates] = useState([]);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [entertainmentFees, setEntertainmentFees] = useState([]);
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
@@ -73,6 +75,10 @@ const Index = () => {
       template.name === selectedTemplate.name ? { ...template, tasks } : template
     );
     setTemplates(updatedTemplates);
+  };
+
+  const handleSaveEntertainmentFee = (feeData) => {
+    setEntertainmentFees([...entertainmentFees, feeData]);
   };
 
   return (
@@ -167,6 +173,7 @@ const Index = () => {
         <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
       )}
       <InventoryManagement />
+      <EntertainmentFeeAccounting onSave={handleSaveEntertainmentFee} />
     </div>
   );
 };
