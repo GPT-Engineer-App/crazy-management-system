@@ -74,6 +74,11 @@ const Sidebar = () => (
               to: "/super-admin-panel",
               icon: <Home className="h-4 w-4" />,
             },
+            {
+              title: "Promotion Tracking",
+              to: "/promotion-tracking",
+              icon: <Home className="h-4 w-4" />,
+            },
           ].map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}

@@ -11,6 +11,7 @@ import WastageReport from "./components/WastageReport";
 import AdminPanel from "./pages/AdminPanel";
 import EmployeeInterface from "./pages/EmployeeInterface";
 import SuperAdminPanel from "./pages/SuperAdminPanel"; // Import the new SuperAdminPanel component
+import PromotionTracking from "./pages/PromotionTracking"; // Import the PromotionTracking component
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => {
               <Route path="admin-panel" element={<AdminPanel />} />
               <Route path="employee-interface" element={<EmployeeInterface />} />
               <Route path="super-admin-panel" element={<SuperAdminPanel />} /> {/* Add the new route */}
+              <Route path="promotion-tracking" element={<PromotionTracking />} /> {/* Add the new route */}
             </Route>
           </Routes>
         </Router>

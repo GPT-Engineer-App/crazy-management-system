@@ -42,6 +42,9 @@ const DesktopNav = () => (
         {item.title}
       </NavItem>
     ))}
+    <NavItem key="promotion-tracking" to="/promotion-tracking">
+      Promotion Tracking
+    </NavItem>
   </nav>
 );
 
@@ -67,6 +70,9 @@ const MobileNav = () => (
             {item.title}
           </NavItem>
         ))}
+        <NavItem key="promotion-tracking" to="/promotion-tracking">
+          Promotion Tracking
+        </NavItem>
       </nav>
     </SheetContent>
   </Sheet>
