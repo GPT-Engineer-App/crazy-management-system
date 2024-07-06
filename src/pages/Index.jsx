@@ -10,6 +10,7 @@ import TimeClock from "@/components/TimeClock";
 import AttendanceReport from "@/components/AttendanceReport";
 import Checklist from "@/components/Checklist";
 import ChecklistTemplateManager from "@/components/ChecklistTemplateManager";
+import InventoryManagement from "@/components/InventoryManagement";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -165,6 +166,7 @@ const Index = () => {
       {selectedTemplate && (
         <Checklist template={selectedTemplate} onSave={handleSaveChecklist} />
       )}
+      <InventoryManagement />
     </div>
   );
 };
